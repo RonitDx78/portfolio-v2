@@ -1,83 +1,37 @@
 @import "tailwindcss";
 
-/* ── Design Tokens ── */
+/* Brittany Chiang exact color tokens */
 @theme {
-  --color-mint:     #64ffda;
-  --color-mint-dim: rgba(100, 255, 218, 0.1);
   --color-navy:     #0a192f;
-
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+  --color-lnavy:    #112240;
+  --color-llnavy:   #233554;
+  --color-slate:    #8892b0;
+  --color-lslate:   #a8b2d8;
+  --color-llslate:  #ccd6f6;
+  --color-green:    #64ffda;
+  --color-gtint:    rgba(100,255,218,0.1);
 }
 
-/* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: #0a0a0a;
-  color: #ccd6f6;
-  line-height: 1.6;
+  background-color: #0a192f;
+  color: #8892b0;
+  line-height: 1;
   overflow-x: hidden;
 }
 
-::selection {
-  background: rgba(100, 255, 218, 0.2);
-  color: #64ffda;
-}
+::selection { background: rgba(100,255,218,0.15); color: #64ffda; }
 
 ::-webkit-scrollbar       { width: 4px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-track { background: #0a192f; }
 ::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
 
-/* ── Keyframes ── */
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-@keyframes spin-slow {
-  to { transform: rotate(360deg); }
-}
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; }
-  50%       { opacity: 0.7; }
-}
-
-/* ── Utilities ── */
-@utility animate-fade-up   { animation: fade-up 0.5s cubic-bezier(0.22,1,0.36,1) both; }
-@utility animate-fade-in   { animation: fade-in 0.4s ease both; }
-@utility animate-blink     { animation: blink 1s step-end infinite; }
-@utility animate-spin-slow { animation: spin-slow 14s linear infinite; }
-@utility animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-
-@utility mono {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-}
-
-/* A card surface */
-@utility card {
-  background: #112240;
-  border: 1px solid #233554;
-  border-radius: 4px;
-}
-
-/* Mint-coloured accent text */
-@utility accent {
-  color: #64ffda;
-}
+@keyframes blink  { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }

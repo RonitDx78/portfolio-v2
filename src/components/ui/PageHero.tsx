@@ -1,22 +1,19 @@
-interface PageHeroProps {
-  num: string;
-  title: string;
-  subtitle?: string;
-}
+/* Section heading in the BC style: label · title · divider line */
+interface Props { num: string; title: string; subtitle?: string; }
 
-export default function PageHero({ num, title, subtitle }: PageHeroProps) {
+export default function PageHero({ num, title, subtitle }: Props) {
   return (
-    <section className="pt-36 pb-16 max-w-5xl mx-auto px-6 sm:px-12">
-      <p className="mono text-[#64ffda] mb-3 text-sm">{num}</p>
-      <h1 className="text-4xl sm:text-5xl font-black text-[#ccd6f6] tracking-tight leading-tight">
-        {title}
-      </h1>
+    <div className="mb-14">
+      <div className="flex items-center gap-4 mb-5">
+        <h1 className="font-mono text-2xl sm:text-3xl font-bold text-[#ccd6f6] whitespace-nowrap">
+          <span className="text-[#64ffda] mr-2 text-xl">{num}</span>
+          {title}
+        </h1>
+        <div className="h-px flex-1 bg-[#233554]" />
+      </div>
       {subtitle && (
-        <p className="mt-4 text-[#8892b0] max-w-xl text-base leading-relaxed">
-          {subtitle}
-        </p>
+        <p className="text-[#8892b0] text-base leading-relaxed max-w-xl">{subtitle}</p>
       )}
-      <div className="mt-6 h-px w-full max-w-xs bg-[#233554]" />
-    </section>
+    </div>
   );
 }
