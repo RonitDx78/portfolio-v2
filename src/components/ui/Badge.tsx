@@ -1,19 +1,18 @@
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: "default" | "primary" | "success" | "mono";
+  variant?: "default" | "mint" | "success";
   className?: string;
 }
 
 export default function Badge({ children, variant = "default", className = "" }: BadgeProps) {
   const styles = {
-    default: "bg-white/[0.05] border border-white/[0.08] text-[#8b9ab5]",
-    primary: "bg-[#60a5fa]/10 border border-[#60a5fa]/20 text-[#60a5fa]",
-    success: "bg-emerald-400/10 border border-emerald-400/20 text-emerald-400",
-    mono:    "bg-white/[0.04] border border-white/[0.06] text-[#8b9ab5] font-mono",
+    default: "bg-[#112240] text-[#8892b0] border border-[#233554]",
+    mint:    "bg-[#64ffda]/10 text-[#64ffda] border border-[#64ffda]/20",
+    success: "bg-emerald-900/30 text-emerald-400 border border-emerald-700/40",
   }[variant];
 
   return (
-    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${styles} ${className}`}>
+    <span className={`mono inline-flex items-center px-3 py-1 rounded text-[11px] ${styles} ${className}`}>
       {children}
     </span>
   );
